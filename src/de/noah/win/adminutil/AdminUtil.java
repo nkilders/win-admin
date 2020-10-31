@@ -1,17 +1,16 @@
-package de.noah.winadm;
+package de.noah.win.adminutil;
 
 import java.io.*;
 import java.util.prefs.Preferences;
 
 /**
- * Util for running Java applications as Admin
- * using one line of code
+ * Util for running Java applications as Admin in Windows
  *
  * @author  Noah Kilders
  */
-public class WinAdminUtil {
+public class AdminUtil {
     private static final File TEMP_FILE = new File(System.getProperty("java.io.tmpdir"), "WinAdminUtil.vbs");
-    private static final File THIS_FILE = new File(WinAdminUtil.class
+    private static final File THIS_FILE = new File(AdminUtil.class
             .getProtectionDomain()
             .getCodeSource()
             .getLocation()
@@ -20,6 +19,10 @@ public class WinAdminUtil {
             .replace("%20", " ")
             .replace("/", "\\"));
 
+    /**
+     * Runs the application again and asks for Admin rights.
+     * Does not close ths running application.
+     */
     public static void runAsAdmin() {
         if (isAdmin()) {
             TEMP_FILE.delete();
@@ -38,6 +41,9 @@ public class WinAdminUtil {
         }
     }
 
+    /**
+     * @return {@code true} if the application was run as Admin
+     */
     public static boolean isAdmin() {
         try {
             final Preferences preferences = Preferences.systemRoot();

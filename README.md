@@ -8,12 +8,12 @@ Only works with the compiled .jar-file, not when executed in an IDE.
 ```java
 package main;
 
-import de.noah.winadm.*;
+import de.noah.win.adminutil.AdminUtil;
 
 public class MyClass {
     public static void main(String[] args) {
-        if(!WinAdminUtil.isAdmin()) {
-            WinAdminUtil.runAsAdmin();
+        if(!AdminUtil.isAdmin()) {
+            AdminUtil.runAsAdmin();
             System.exit(0);
         }
 
