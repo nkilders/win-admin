@@ -1,4 +1,4 @@
-package de.noah.win.adminutil;
+package de.nkilders.win.adminutil;
 
 import java.io.*;
 import java.util.prefs.Preferences;

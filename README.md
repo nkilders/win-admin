@@ -8,11 +8,11 @@ Only works with the compiled .jar-file, not when executed in an IDE.
 ```java
 package main;
 
-import de.noah.win.adminutil.AdminUtil;
+import de.nkilders.win.adminutil.AdminUtil;
 
 public class MyClass {
     public static void main(String[] args) {
-        if(!AdminUtil.isAdmin()) {
+        if (!AdminUtil.isAdmin()) {
             AdminUtil.runAsAdmin();
             System.exit(0);
         }
