@@ -34,7 +34,6 @@ public class AdminUtil {
                 writer.close();
 
                 Runtime.getRuntime().exec("wscript " + TEMP_FILE.getPath());
-                TEMP_FILE.deleteOnExit();
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
